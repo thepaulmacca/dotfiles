@@ -117,6 +117,10 @@ if ! shopt -oq posix; then
 fi
 
 # Starship
+function blastoff(){
+    echo "🚀"
+}
+starship_precmd_user_func="blastoff"
 eval "$(starship init bash)"
 
 # Kubectl
