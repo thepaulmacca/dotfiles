@@ -130,6 +130,7 @@ complete -F __start_kubectl k
 # Auto complete
 source <(kubectl completion bash)
 source <(flux completion bash)
+complete -C /usr/bin/terraform terraform
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
