@@ -133,10 +133,8 @@ source <(flux completion bash)
 complete -C /usr/bin/terraform terraform
 
 # Start Docker daemon automatically when logging in if not running
-RUNNING=`ps aux | grep dockerd | grep -v grep`
-if [ -z "$RUNNING" ]; then
-    sudo dockerd > /dev/null 2>&1 &
-    disown
+if service docker status 2>&1 | grep -q "is not running"; then
+    wsl.exe -d "${WSL_DISTRO_NAME}" -u root -e /usr/sbin/service docker start >/dev/null 2>&1
 fi
 
 export NVM_DIR="$HOME/.nvm"
