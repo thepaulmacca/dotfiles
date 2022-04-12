@@ -129,6 +129,7 @@ complete -F __start_kubectl k
 
 # Auto complete
 source <(kubectl completion bash)
+source <(helm completion bash)
 source <(flux completion bash)
 complete -C /usr/bin/terraform terraform
 
